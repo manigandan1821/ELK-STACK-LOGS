@@ -1,0 +1,17 @@
+https://github.com/gtsopour/fluent-bit-kubernetes-logging
+https://blog.omerh.me/post/2020/05/splitting-kubernetes-logs-by-namespaces-with-fluentbit/
+https://medium.com/kubernetes-tutorials/exporting-kubernetes-logs-to-elasticsearch-using-fluent-bit-758e8de606af
+https://docs.fluentbit.io/manual/pipeline/filters/kubernetes
+https://docs.fluentbit.io/manual/pipeline/outputs/elasticsearch
+https://medium.com/uckey/why-fluentd-stopped-to-send-logs-to-elasticsearch-on-kubernetes-related-to-ssl-4ec1671b9ced
+https://docs.fluentbit.io/manual/pipeline/outputs/elasticsearch
+
+
+How it works
+Kubernetes uses symlinks from the docker logs in /var/lib/docker/containers to eventually /var/log/containers.
+Each symlink add to the log name something. Once the pod name is added, and then the namespace is added. 
+Eventualy the logs in /var/log/containers adds to the log file name podName_namespaceName_deploymentName-.
+
+
+
+Note: We need to encode the username, password, host and port then pass the varaiables.
